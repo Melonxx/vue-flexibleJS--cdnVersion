@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    {{ message }}
+    <input type="text" v-model="msg" @click="fn">
+    <router-link to="/foo">Go to Foo</router-link>
+    <router-link to="/bar">Go to Bar</router-link>
+    <ul>
+      <item v-for="i in arr" :key="i"></item>
+    </ul>
+    <router-view></router-view>
+  </div>
+  <script src="./router/index.js"></script>
+  <script src="./router/after.js"></script>
+  <script src="./components/li.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      router,
+      data() {
+        return {
+          message: 'Hello Vue!',
+          msg: 456456,
+          arr: [1, 2, 34, 54]
+        }
+      },
+      methods: {
+        fn() {
+          console.log(1111)
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
